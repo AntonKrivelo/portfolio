@@ -1,0 +1,136 @@
+.benefit {
+    padding-top: 150px;
+    &__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+    &__subtitle {
+        position: relative;
+        @include before-circle;
+        &:before {
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+    }
+    &__divider {
+        width: 65px;
+        height: 3px;
+        background-color: $menu-color;
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        column-gap: 5%;
+        padding: 60px 65px 0 65px;
+        
+    }
+    &__column-title {
+        position: relative;
+        @include before-circle;
+        left: 40px;
+        &:before {
+            width: 15px;
+            height: 15px;
+            left: -70px;
+            top: 22px;
+        }
+    }
+    &__column-divider {
+        position: relative; 
+        list-style-type: none;
+        &:after {
+            content: '';
+            background-color: black;
+            width: 1px;
+            height: calc(100% + 16px);
+            position: absolute;
+            top: -31px;
+            left: -24px;
+        }
+    }
+    &__item {
+        padding-left: 36px;
+    }
+    &__item-icon {
+        position: relative;
+        width: 15%;
+        @include before-circle;
+        img {
+            position: absolute;
+            
+            bottom: 9px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: black;
+            width: 1px;
+            height: 58px;
+            left: -30px;
+            top: -17px;
+            transform: rotate(90deg);
+        }
+    }
+    &__item-header {
+        display: flex;
+        padding-top: 40px;
+    }
+    &__item-text {
+        padding-top: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        
+    }
+    &__item-header-text {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 992px) {
+    .benefit {
+        &__wrapper {
+            grid-template-columns: none;
+        }
+    }
+}
+@media(max-width: 577px) {
+    .benefit {
+        &__title {
+            font-size: 25px;
+        }
+        &__item {
+            font-size: 12px;
+
+        }
+        h4{
+            font-size: 12px;
+        }
+        &__item-text {
+            font-size: 10px;
+        }
+        &__item-header-text {
+            padding-left: 11px;
+        }
+    }
+}
+@media(max-width: 365px) {
+    .benefit {
+        &__title {
+            font-size: 25px;
+        }
+        &__item {
+            font-size: 9px;
+
+        }
+        h4{
+            font-size: 9px;
+        }
+        
+        &__item-text {
+            font-size: 10px;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.hamburger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    flex-direction: column;
+    gap: 5px;
+    align-items: self-end;
+    &:hover {
+        span {
+            background-color: white;
+        }
+    }
+    cursor: pointer;
+    span {
+        cursor: pointer;
+        width: 32px;
+        height: 2px;
+        background-color: #151812;
+    }
+    span.middle {
+        width: 36px;
+    }   
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 345px;
+    height: 100vh;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.6s;
+    &_active {
+        visibility: visible;
+        opacity: 1; 
+        left: 0;
+    }
+    nav {
+       padding-left: 30px;
+    }
+    &__block {
+        background-color: $menu-color;
+        height: 100%;
+        padding-top: 140px;
+        padding-left: 40px;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__item {
+        position: relative;
+        list-style-type: none;
+        @include before_circle-low;
+        
+        a {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFF;
+            text-decoration: none;
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+    .close {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        &:hover {
+            path {
+                fill: #FFF;
+            }
+        }
+    }
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        position: absolute;
+        right: 40%;
+        bottom: 10%;
+    }
+    &__link-social {
+       svg {
+        transform: rotate(90deg);
+       }
+       &:hover {
+        path {
+            fill: #FFF;
+        }
+       }
+    }
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(237, 234, 234, 0.5);
+        z-index: -2;
+    }
+}

@@ -1,0 +1,38 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 992px;
+    }
+    .social {
+        display: none;
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .promotion__title {
+        font-size: 32px;
+    }
+}
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+
+// @media(max-width: 320px) {
+//     .container {
+//         width: 100%;
+//     }
+//     .social {
+//         display: none;
+//     }
+
+// }
